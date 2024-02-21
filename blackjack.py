@@ -32,7 +32,7 @@ class Mao:
         return pontuacao
     
     
-def play_blackjack():
+def jogar_blackjack():
     deck = Deck()
     Mao_jogador = Mao()
     Mao_outro = Mao()
@@ -62,13 +62,13 @@ def play_blackjack():
         Mao_outro.adicionar_carta(deck.dar_carta())
     
     Pontuacao_outro = Mao_outro.pontuacao()
-    print("Mão do dealer:", Mao_outro.cartas, "Pontuação:", Pontuacao_outro)
+    print("Mão do outro:", Mao_outro.cartas, "Pontuação:", Pontuacao_outro)
     
     if Pontuacao_outro > 21 or pontuacao_jogador > Pontuacao_outro:
         print("Você ganhou!")
     elif Pontuacao_outro > pontuacao_jogador:
-        print("Dealer ganhou!")
+        print("O outro ganhou!")
     else:
         print("Empate!")
 
-play_blackjack()
+jogar_blackjack()
